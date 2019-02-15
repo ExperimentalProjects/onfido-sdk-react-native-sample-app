@@ -32,10 +32,12 @@ export default class App extends Component<{}> {
   }
 
   launchSDK = () => {
+    let otherparams = {}
     this.createApplicant((applicantId) => {
           NativeModules.OnfidoSDK.startSDK(
             this.token,
             applicantId,
+            otherparams,
             () => { this.setTextContent("Verification complete", "To perform another verification, press \"Launch\"") },
             (errorCause) => { this.setTextContent("Flow not finished", "To try again, press \"Launch\"") }
           );
