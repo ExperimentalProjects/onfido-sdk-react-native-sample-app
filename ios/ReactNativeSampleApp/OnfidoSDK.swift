@@ -13,6 +13,7 @@ import Onfido
 class OnfidoSDK: NSObject {
   @objc func startSDK(_ token: String,
                       applicantId: String,
+                      otherparams: Object,
                       resolver resolve: @escaping RCTResponseSenderBlock,
                       rejecter reject: @escaping RCTResponseSenderBlock) -> Void {
     DispatchQueue.main.async {
@@ -24,7 +25,7 @@ class OnfidoSDK: NSObject {
                    andApplicantId id: String,
                    resolver resolve: @escaping RCTResponseSenderBlock,
                    rejecter reject: @escaping RCTResponseSenderBlock) {
-
+    //us otherparams object now
     let onfidoConfig = try! OnfidoConfig.builder()
       .withToken(token)
       .withApplicantId(id)
