@@ -13,6 +13,7 @@
 
 RCT_EXTERN_METHOD(startSDK: (NSString *)token
                   applicantId: (NSString *)applicationID
+                  otherparams: (NSObject *)otherparams
                   resolver:(RCTResponseSenderBlock *)resolve
                   rejecter:(RCTResponseSenderBlock *)reject)
 
